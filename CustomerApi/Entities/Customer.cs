@@ -19,7 +19,7 @@ namespace CustomerApi.Entities
         public int Number { get; set; }
         public string Address { get; set; }
         public int? LoanId { get; set; }
-        public int Pan { get; set; }
+        public string Pan { get; set; }
         public string Gender { get; set; }
         public DateTime Dob { get; set; }
         public int MonthlyIncome { get; set; }
