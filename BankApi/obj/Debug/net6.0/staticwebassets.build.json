@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "/QZeaBpYW75Ugofg/MTcjaSNDbAdOYNuue4wnY/6pfw=",
+  "Hash": "LbWM29O07zdlCXm9AvAx8AyhqdTZt0oeiO/t57xya9Y=",
   "Source": "BankApi",
   "BasePath": "_content/BankApi",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\CustomerApi\\CustomerApi.csproj",
+      "Version": 2,
+      "Source": "CustomerApi",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }

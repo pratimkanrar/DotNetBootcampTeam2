@@ -5857,19 +5857,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\prati\\.nuget\\packages\\": {}
+    "C:\\Users\\kvspr\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\UnitTestProject\\UnitTestProject.csproj",
+      "projectUniqueName": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\UnitTestProject\\UnitTestProject.csproj",
       "projectName": "UnitTestProject",
-      "projectPath": "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\UnitTestProject\\UnitTestProject.csproj",
-      "packagesPath": "C:\\Users\\prati\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\UnitTestProject\\obj\\",
+      "projectPath": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\UnitTestProject\\UnitTestProject.csproj",
+      "packagesPath": "C:\\Users\\kvspr\\.nuget\\packages\\",
+      "outputPath": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\UnitTestProject\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\prati\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kvspr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5877,6 +5882,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

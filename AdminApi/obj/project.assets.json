@@ -869,6 +869,41 @@
             "rid": "win"
           }
         }
+      },
+      "BankApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CustomerApi": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
+          "Swashbuckle.AspNetCore": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/BankApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BankApi.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "CustomerApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
+          "Swashbuckle.AspNetCore": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/CustomerApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomerApi.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -2215,29 +2250,46 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BankApi/1.0.0": {
+      "type": "project",
+      "path": "../BankApi/BankApi.csproj",
+      "msbuildProject": "../BankApi/BankApi.csproj"
+    },
+    "CustomerApi/1.0.0": {
+      "type": "project",
+      "path": "../CustomerApi/CustomerApi.csproj",
+      "msbuildProject": "../CustomerApi/CustomerApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BankApi >= 1.0.0",
+      "CustomerApi >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.10",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\prati\\.nuget\\packages\\": {}
+    "C:\\Users\\kvspr\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\AdminApi\\AdminApi.csproj",
+      "projectUniqueName": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\AdminApi\\AdminApi.csproj",
       "projectName": "AdminApi",
-      "projectPath": "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\AdminApi\\AdminApi.csproj",
-      "packagesPath": "C:\\Users\\prati\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\AdminApi\\obj\\",
+      "projectPath": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\AdminApi\\AdminApi.csproj",
+      "packagesPath": "C:\\Users\\kvspr\\.nuget\\packages\\",
+      "outputPath": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\AdminApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\prati\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kvspr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2245,12 +2297,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\BankApi\\BankApi.csproj": {
+              "projectPath": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\BankApi\\BankApi.csproj"
+            },
+            "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\CustomerApi\\CustomerApi.csproj": {
+              "projectPath": "D:\\DotNET\\Loan Management System\\LoanManagementSystemApi\\CustomerApi\\CustomerApi.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

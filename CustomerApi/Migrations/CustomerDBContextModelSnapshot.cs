@@ -51,11 +51,13 @@ namespace CustomerApi.Migrations
                     b.Property<int>("MonthlyIncome")
                         .HasColumnType("int");
 
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
+                    b.Property<string>("Number")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Pan")
-                        .HasColumnType("int");
+                    b.Property<string>("Pan")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
                         .IsRequired()

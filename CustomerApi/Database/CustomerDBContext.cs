@@ -9,6 +9,7 @@ namespace CustomerApi.Database
 {
     public class CustomerDBContext : DbContext
     {
+
         //Entity set
         public DbSet<Customer> Customers { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -16,7 +16,8 @@ namespace AdminApi.Entities
         [Required]
         public string Password { get; set; }
         public string Email { get; set; }
-        public int Number { get; set; }
+        [Phone]
+        public string Number { get; set; }
         public string Address { get; set; }
     }
 }
