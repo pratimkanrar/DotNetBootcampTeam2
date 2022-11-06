@@ -60,3 +60,5 @@ C:\Users\prati\source\repos\LoanManagementSystemApi\CustomerApi\obj\Debug\net6.0
 C:\Users\prati\source\repos\LoanManagementSystemApi\CustomerApi\obj\Debug\net6.0\CustomerApi.pdb
 C:\Users\prati\source\repos\LoanManagementSystemApi\CustomerApi\obj\Debug\net6.0\CustomerApi.genruntimeconfig.cache
 C:\Users\prati\source\repos\LoanManagementSystemApi\CustomerApi\obj\Debug\net6.0\ref\CustomerApi.dll
+C:\Users\prati\source\repos\LoanManagementSystemApi\CustomerApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\prati\source\repos\LoanManagementSystemApi\CustomerApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

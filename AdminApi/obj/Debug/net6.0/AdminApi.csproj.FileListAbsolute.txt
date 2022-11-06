@@ -62,3 +62,13 @@ C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\obj\Debug\net6.0\re
 C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\obj\Debug\net6.0\AdminApi.pdb
 C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\obj\Debug\net6.0\AdminApi.genruntimeconfig.cache
 C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\obj\Debug\net6.0\ref\AdminApi.dll
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\BankApi.deps.json
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\BankApi.runtimeconfig.json
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\BankApi.exe
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\CustomerApi.deps.json
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\CustomerApi.runtimeconfig.json
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\CustomerApi.exe
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\BankApi.dll
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\CustomerApi.dll
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\BankApi.pdb
+C:\Users\prati\source\repos\LoanManagementSystemApi\AdminApi\bin\Debug\net6.0\CustomerApi.pdb

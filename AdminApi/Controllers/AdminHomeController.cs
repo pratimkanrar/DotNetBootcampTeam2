@@ -7,6 +7,8 @@ using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using AdminApi.Services;
 using AdminApi.Entities;
+using System.Linq.Expressions;
+using System.Collections;
 
 namespace AdminApi.Controllers
 {
@@ -14,7 +16,7 @@ namespace AdminApi.Controllers
     [Route("[controller]")]
     public class AdminHomeController : ControllerBase
     {
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         [Route("home")]
         public IActionResult AdminHome()

@@ -953,6 +953,46 @@
             "rid": "win"
           }
         }
+      },
+      "BankApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
+          "Microsoft.IdentityModel.Tokens": "6.25.0",
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "System.IdentityModel.Tokens.Jwt": "6.25.0"
+        },
+        "compile": {
+          "bin/placeholder/BankApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BankApi.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "CustomerApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
+          "Microsoft.IdentityModel.Tokens": "6.25.0",
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "System.IdentityModel.Tokens.Jwt": "6.25.0"
+        },
+        "compile": {
+          "bin/placeholder/CustomerApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomerApi.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -2552,10 +2592,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BankApi/1.0.0": {
+      "type": "project",
+      "path": "../BankApi/BankApi.csproj",
+      "msbuildProject": "../BankApi/BankApi.csproj"
+    },
+    "CustomerApi/1.0.0": {
+      "type": "project",
+      "path": "../CustomerApi/CustomerApi.csproj",
+      "msbuildProject": "../CustomerApi/CustomerApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BankApi >= 1.0.0",
+      "CustomerApi >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.10",
@@ -2590,7 +2642,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\BankApi\\BankApi.csproj": {
+              "projectPath": "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\BankApi\\BankApi.csproj"
+            },
+            "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\CustomerApi\\CustomerApi.csproj": {
+              "projectPath": "C:\\Users\\prati\\source\\repos\\LoanManagementSystemApi\\CustomerApi\\CustomerApi.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
