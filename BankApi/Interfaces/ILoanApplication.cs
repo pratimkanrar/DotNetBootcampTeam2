@@ -8,6 +8,8 @@ namespace BankApi.Interfaces
     public interface ILoanApplication
     {
         List<LoanApplications> GetAll();
+        LoanApplications GetByCustId(int custid);
+        void Add(LoanApplications application);
         void Edit(LoanApplications application);
     }
 }

@@ -5,42 +5,49 @@ using System.CodeDom.Compiler;
 using System.Text;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
-using AdminApi.Services;
-using AdminApi.Entities;
+using CustomerApi.Services;
+using CustomerApi.Entities;
 using System.Linq.Expressions;
 using System.Collections;
 
-namespace AdminApi.Controllers
+namespace CustomerApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AdminHomeController : ControllerBase
+    public class CustomerHomeController : ControllerBase
     {
-        [Authorize(Roles = "Administrator")]
+        private readonly CustomerHomeService service;
+        public CustomerHomeController()
+        {
+            this.service = new CustomerHomeService();
+        }
+        [Authorize]
         [HttpGet]
         [Route("home")]
-        public IActionResult AdminHome()
+        public IActionResult CustomerHome()
         {
             var user = GetCurrentUser();
-            if (user != null)
+            if(user!=null)
             {
-                return Ok(user.Username);
+                Customer customer = this.service.GetCustomerDetails(user.Username, user.Email);
+                if (customer != null)
+                {
+                    return Ok(customer);
+                }
             }
             return BadRequest();
         }
 
-        private Admin GetCurrentUser()
+        private Customer GetCurrentUser()
         {
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)
             {
                 var userClaims = identity.Claims;
-                return new Admin
+                return new Customer
                 {
                     Username = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
-                    Role = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Role)?.Value,
-                    Email = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Email)?.Value,
-                    Address = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.StreetAddress)?.Value,
+                    Email = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Email)?.Value
                 };
             }
             return null;

@@ -1,25 +1,25 @@
-﻿using AdminApi.Database;
-using AdminApi.Entities;
+﻿using CustomerApi.Database;
+using CustomerApi.Entities;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using AdminApi.Interfaces;
+using CustomerApi.Interfaces;
 
-namespace AdminApi.Services
+namespace CustomerApi.Services
 {
     public class LoginService : ILoginService
     {
         private IConfiguration _config;
-        private readonly AdminDBContext context;
+        private readonly CustomerDBContext context;
         public LoginService(IConfiguration config)
         {
             _config = config;
-            context = new AdminDBContext();
+            context = new CustomerDBContext();
         }
-        public string Generate(Admin user)
+        public string Generate(Customer user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -27,9 +27,7 @@ namespace AdminApi.Services
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Username),
-                new Claim(ClaimTypes.Role, user.Role),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.StreetAddress, user.Address)
             };
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
                 _config["Jwt:Audience"],
@@ -40,9 +38,9 @@ namespace AdminApi.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public Admin Authenticate(AdminLogin admin)
+        public Customer Authenticate(CustomerLogin Customer)
         {
-            var user = this.context.Admin.SingleOrDefault(o => o.Username == admin.Username && o.Password == admin.Password);
+            var user = this.context.Customers.SingleOrDefault(o => o.Username == Customer.Username && o.Password == Customer.Password);
             if (user == null)
             {
                 return null;
@@ -50,13 +48,13 @@ namespace AdminApi.Services
             return user;
         }
 
-        public void ChangePassword(AdminLogin admin)
+        public void ChangePassword(CustomerLogin Customer)
         {
-            var user = this.context.Admin.SingleOrDefault(o => o.Username == admin.Username);
+            var user = this.context.Customers.SingleOrDefault(o => o.Username == Customer.Username);
             if (user != null)
             {
-                user.Password = admin.Password;
-                this.context.Admin.Update(user);
+                user.Password = Customer.Password;
+                this.context.Customers.Update(user);
             }
         }
     }

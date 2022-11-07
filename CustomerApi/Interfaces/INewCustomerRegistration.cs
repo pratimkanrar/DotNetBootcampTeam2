@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using CustomerApi.Entities;
 namespace CustomerApi.Interfaces
 {
-    public interface INewCustomerRegistrationInterface
+    public interface INewCustomerRegistration
     {
-        public void Register(Customer customer);
+        public bool Register(Customer customer);
     }
 }

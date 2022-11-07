@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CustomerApi.Entities;
 using CustomerApi.Services;
+using Microsoft.AspNetCore.Authorization;
+
 namespace CustomerApi.Controllers
 {
     [Route("api/[controller]")]
@@ -17,12 +19,16 @@ namespace CustomerApi.Controllers
         {
             this.service = new NewCustomerRegistrationService();
         }
+        [AllowAnonymous]
         [Route("register")]
         [HttpPost]
         public IActionResult Register(Customer customer)
         {
-            service.Register(customer);
-            return StatusCode(200, "New User Registered Successfully");
+            if (service.Register(customer))
+            {
+                return StatusCode(200, "New User Registered Successfully");
+            }
+            return BadRequest("Username already present");
         }
     }
 }

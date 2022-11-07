@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BankApi.Entities;
 using BankApi.Services;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BankApi.Controllers
 {
@@ -29,8 +30,16 @@ namespace BankApi.Controllers
         [HttpPut]
         public IActionResult Edit(LoanRate loanrate)
         {
-            service.Edit(loanrate);
-            return Ok(loanrate);
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", this.HttpContext.Request.Headers["Authorization"].ToString());
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5248/AdminHome/home");
+            var response = client.Send(request);
+            if (response.IsSuccessStatusCode)
+            {
+                this.service.Edit(loanrate);
+                return Ok(loanrate);
+            }
+            return StatusCode(401, "Not Authorized");
         }
     }
 }

@@ -5,27 +5,27 @@ using System.CodeDom.Compiler;
 using System.Text;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
-using AdminApi.Services;
-using AdminApi.Entities;
+using CustomerApi.Services;
+using CustomerApi.Entities;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace AdminApi.Controllers
+namespace CustomerApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AdminLoginController : ControllerBase
+    public class CustomerLoginController : ControllerBase
     {
         private readonly LoginService service;
-        public AdminLoginController(IConfiguration config)
+        public CustomerLoginController(IConfiguration config)
         {
             this.service = new LoginService(config);
         }
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-        public IActionResult Login(AdminLogin admin)
+        public IActionResult Login(CustomerLogin Customer)
         {
-            var user = this.service.Authenticate(admin);
+            var user = this.service.Authenticate(Customer);
             if (user != null)
             {
                 var token = this.service.Generate(user);
@@ -33,12 +33,12 @@ namespace AdminApi.Controllers
             }
             return NotFound("User not found");
         }
-        [Authorize(Roles = "Administrator")]
+        [Authorize]
         [HttpPut]
         [Route("changepassword")]
-        public IActionResult ChangePassword(AdminLogin admin)
+        public IActionResult ChangePassword(CustomerLogin Customer)
         {
-            this.service.ChangePassword(admin);
+            this.service.ChangePassword(Customer);
             return Ok("Password Changed");
         }
     }
