@@ -23,7 +23,7 @@ namespace AdminApi.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-        public IActionResult Login(AdminLogin admin)
+        public IActionResult Login([FromBody] AdminLogin admin)
         {
             var user = this.service.Authenticate(admin);
             if (user != null)
@@ -36,7 +36,7 @@ namespace AdminApi.Controllers
         [Authorize(Roles = "Administrator")]
         [HttpPut]
         [Route("changepassword")]
-        public IActionResult ChangePassword(AdminLogin admin)
+        public IActionResult ChangePassword([FromBody] AdminLogin admin)
         {
             this.service.ChangePassword(admin);
             return Ok("Password Changed");

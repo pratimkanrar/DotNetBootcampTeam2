@@ -25,5 +25,19 @@ namespace BankApi.Services
             this.context.Payments.Update(payment);
             this.context.SaveChanges();
         }
+        public void Delete(Payment payment)
+        {
+            this.context.Remove(payment);
+            this.context.SaveChanges();
+        }
+        public Payment Get(int id)
+        {
+            return this.context.Payments.SingleOrDefault(o => o.ReceiptId == id);
+        }
+        public void Add(Payment payment)
+        {
+            this.context.Add(payment);
+            this.context.SaveChanges();
+        }
     }
 }

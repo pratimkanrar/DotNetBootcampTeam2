@@ -46,7 +46,7 @@ namespace BankApi.Controllers
         }
         [Route("customerapplications")]
         [HttpPut]
-        public IActionResult Edit(LoanApplications application)
+        public IActionResult Edit([FromBody] LoanApplications application)
         {
             if (this.HttpContext.Request.Headers["Authorization"].ToString() == "")
             {
@@ -83,7 +83,7 @@ namespace BankApi.Controllers
         }
         [Route("customerapplications")]
         [HttpPost]
-        public IActionResult ApplyforLoan(LoanApplications application)
+        public IActionResult ApplyforLoan([FromBody] LoanApplications application)
         {
             return Ok("hi");
             if (this.HttpContext.Request.Headers["Authorization"].ToString() == "")

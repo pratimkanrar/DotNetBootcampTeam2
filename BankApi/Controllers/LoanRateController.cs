@@ -28,7 +28,7 @@ namespace BankApi.Controllers
         }
         [Route("loanrates")]
         [HttpPut]
-        public IActionResult Edit(LoanRate loanrate)
+        public IActionResult Edit([FromBody] LoanRate loanrate)
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Add("Authorization", this.HttpContext.Request.Headers["Authorization"].ToString());

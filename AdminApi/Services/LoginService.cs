@@ -42,7 +42,7 @@ namespace AdminApi.Services
 
         public Admin Authenticate(AdminLogin admin)
         {
-            var user = this.context.Admin.SingleOrDefault(o => o.Username == admin.Username && o.Password == admin.Password);
+            var user = this.context.Admin.FirstOrDefault(o => o.Username == admin.Username && o.Password == admin.Password);
             if (user == null)
             {
                 return null;

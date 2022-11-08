@@ -23,7 +23,7 @@ namespace CustomerApi.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-        public IActionResult Login(CustomerLogin Customer)
+        public IActionResult Login([FromBody] CustomerLogin Customer)
         {
             var user = this.service.Authenticate(Customer);
             if (user != null)
@@ -36,7 +36,7 @@ namespace CustomerApi.Controllers
         [Authorize]
         [HttpPut]
         [Route("changepassword")]
-        public IActionResult ChangePassword(CustomerLogin Customer)
+        public IActionResult ChangePassword([FromBody] CustomerLogin Customer)
         {
             this.service.ChangePassword(Customer);
             return Ok("Password Changed");

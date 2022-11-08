@@ -40,7 +40,7 @@ namespace BankApi.Controllers
         }
         [Route("payments")]
         [HttpPut]
-        public IActionResult Edit(Payment payment)
+        public IActionResult Edit([FromBody] Payment payment)
         {
             if (this.HttpContext.Request.Headers["Authorization"].ToString() == "")
             {
@@ -53,6 +53,63 @@ namespace BankApi.Controllers
             if (response.IsSuccessStatusCode)
             {
                 service.Edit(payment);
+                return Ok(payment);
+            }
+            return StatusCode(401, "Not Authorized");
+        }
+        [Route("payments")]
+        [HttpPost]
+        public IActionResult Add([FromBody] Payment payment)
+        {
+            if (this.HttpContext.Request.Headers["Authorization"].ToString() == "")
+            {
+                return StatusCode(401, "Unauthorized");
+            }
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", this.HttpContext.Request.Headers["Authorization"].ToString());
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5248/api/CustomerHome/home");
+            var response = client.Send(request);
+            if (response.IsSuccessStatusCode)
+            {
+                service.Add(payment);
+                return Ok(payment);
+            }
+            return StatusCode(401, "Not Authorized");
+        }
+        [Route("payment/{id}")]
+        [HttpGet]
+        public IActionResult Search(int id)
+        {
+            if (this.HttpContext.Request.Headers["Authorization"].ToString() == "")
+            {
+                return StatusCode(401, "Unauthorized");
+            }
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", this.HttpContext.Request.Headers["Authorization"].ToString());
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5248/AdminHome/home");
+            var response = client.Send(request);
+            if (response.IsSuccessStatusCode)
+            {
+                Payment payment = service.Get(id);
+                return Ok(payment);
+            }
+            return StatusCode(401, "Not Authorized");
+        }
+        [Route("payments")]
+        [HttpDelete]
+        public IActionResult Delete([FromBody] Payment payment)
+        {
+            if (this.HttpContext.Request.Headers["Authorization"].ToString() == "")
+            {
+                return StatusCode(401, "Unauthorized");
+            }
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", this.HttpContext.Request.Headers["Authorization"].ToString());
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5248/AdminHome/home");
+            var response = client.Send(request);
+            if (response.IsSuccessStatusCode)
+            {
+                service.Delete(payment);
                 return Ok(payment);
             }
             return StatusCode(401, "Not Authorized");

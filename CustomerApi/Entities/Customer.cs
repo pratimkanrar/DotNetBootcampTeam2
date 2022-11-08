@@ -16,12 +16,12 @@ namespace CustomerApi.Entities
         [Required]
         public string Password { get; set; }
         public string Email { get; set; }
-        public int Number { get; set; }
+        public string Number { get; set; }
         public string Address { get; set; }
         public int? LoanId { get; set; }
         public string Pan { get; set; }
         public string Gender { get; set; }
-        public DateTime Dob { get; set; }
+        public string Dob { get; set; }
         public int MonthlyIncome { get; set; }
     }
 }

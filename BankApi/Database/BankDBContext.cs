@@ -15,7 +15,7 @@ namespace BankApi.Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //define connection string.
-            optionsBuilder.UseSqlServer(@"Server=localhost;Database=test;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=localhost;Database=test1;Trusted_Connection=True;");
         }
     }
 }

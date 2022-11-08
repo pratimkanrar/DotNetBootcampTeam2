@@ -22,7 +22,7 @@ namespace CustomerApi.Controllers
         [AllowAnonymous]
         [Route("register")]
         [HttpPost]
-        public IActionResult Register(Customer customer)
+        public IActionResult Register([FromBody] Customer customer)
         {
             if (service.Register(customer))
             {

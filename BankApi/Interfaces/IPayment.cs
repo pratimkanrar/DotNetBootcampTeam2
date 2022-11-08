@@ -9,5 +9,8 @@ namespace BankApi.Interfaces
     {
         List<Payment> GetAll();
         void Edit(Payment payment);
+        void Add(Payment payment);
+        Payment Get(int id);
+        void Delete(Payment payment);
     }
 }

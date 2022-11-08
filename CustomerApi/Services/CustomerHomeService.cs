@@ -16,5 +16,9 @@ namespace CustomerApi.Services
             Customer customer = this.context.Customers.SingleOrDefault(o=>o.Username == username && o.Email == email);
             return customer;
         }
+        public List<Customer> GetAll()
+        {
+            return this.context.Customers.ToList();
+        }
     }
 }

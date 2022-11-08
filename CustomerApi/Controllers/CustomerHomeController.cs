@@ -52,5 +52,24 @@ namespace CustomerApi.Controllers
             }
             return null;
         }
+        [HttpGet]
+        [Route("users/getall")]
+        public IActionResult GetAll()
+        {
+            if (this.HttpContext.Request.Headers["Authorization"].ToString() == "")
+            {
+                return StatusCode(401, "Unauthorized");
+            }
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", this.HttpContext.Request.Headers["Authorization"].ToString());
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5248/AdminHome/home");
+            var response = client.Send(request);
+            if (response.IsSuccessStatusCode)
+            {
+                List<Customer> customers = this.service.GetAll();
+                return Ok(customers);
+            }
+            return StatusCode(401, "Not Authorized");
+        }
     }
 }
