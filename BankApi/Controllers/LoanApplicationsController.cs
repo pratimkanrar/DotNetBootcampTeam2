@@ -85,7 +85,6 @@ namespace BankApi.Controllers
         [HttpPost]
         public IActionResult ApplyforLoan([FromBody] LoanApplications application)
         {
-            return Ok("hi");
             if (this.HttpContext.Request.Headers["Authorization"].ToString() == "")
             {
                 return StatusCode(401, "Unauthorized");
