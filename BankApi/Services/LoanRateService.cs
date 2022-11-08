@@ -25,5 +25,10 @@ namespace BankApi.Services
             this.context.LoanRates.Update(loanrate);
             this.context.SaveChanges();
         }
+        public void Add(LoanRate loanrate)
+        {
+            this.context.Add(loanrate);
+            this.context.SaveChanges();
+        }
     }
 }

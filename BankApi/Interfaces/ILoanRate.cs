@@ -9,5 +9,6 @@ namespace BankApi.Interfaces
     {
         List<LoanRate> GetAll();
         void Edit(LoanRate loanRate);
+        void Add(LoanRate loanRate);
     }
 }
