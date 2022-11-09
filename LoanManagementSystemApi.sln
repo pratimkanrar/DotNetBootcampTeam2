@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankApi", "BankApi\BankApi.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerApi", "CustomerApi\CustomerApi.csproj", "{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
