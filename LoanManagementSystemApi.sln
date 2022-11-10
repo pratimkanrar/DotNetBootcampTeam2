@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminApi", "AdminApi\AdminApi.csproj", "{339B1033-A45A-484D-AAFA-A88A5DDAF98C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminApi", "AdminApi\AdminApi.csproj", "{339B1033-A45A-484D-AAFA-A88A5DDAF98C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankApi", "BankApi\BankApi.csproj", "{0302B1CB-47CB-4B12-BEBF-39F4CD9A8D10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankApi", "BankApi\BankApi.csproj", "{0302B1CB-47CB-4B12-BEBF-39F4CD9A8D10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerApi", "CustomerApi\CustomerApi.csproj", "{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerApi", "CustomerApi\CustomerApi.csproj", "{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B0DC8F0-BE44-47BA-93B8-2ED2149563A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65BE0AAB-2DAC-4C91-8CF9-36BE5801CBF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

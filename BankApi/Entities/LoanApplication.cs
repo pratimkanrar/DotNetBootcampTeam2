@@ -18,6 +18,6 @@ namespace BankApi.Entities
         [Required]
         public int CustId { get; set; }
         [Required]
-        public bool IsApproved { get; set; }
+        public int IsApproved { get; set; }
     }
 }

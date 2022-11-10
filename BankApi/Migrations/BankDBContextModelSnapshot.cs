@@ -33,8 +33,8 @@ namespace BankApi.Migrations
                     b.Property<int>("CustId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsApproved")
-                        .HasColumnType("bit");
+                    b.Property<int>("IsApproved")
+                        .HasColumnType("int");
 
                     b.Property<double>("LoanAmount")
                         .HasColumnType("float");
@@ -75,14 +75,16 @@ namespace BankApi.Migrations
                     b.Property<double>("EmiAmount")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("EmiDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("EmiDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("LateFineCharge")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("ReceiptDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ReceiptDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("TotalAmount")
                         .HasColumnType("float");

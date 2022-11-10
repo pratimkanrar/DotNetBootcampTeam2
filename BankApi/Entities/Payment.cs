@@ -14,9 +14,9 @@ namespace BankApi.Entities
         [Required]
         public int CustId { get; set; }
         [Required]
-        public DateTime ReceiptDate { get; set; }
+        public string ReceiptDate { get; set; }
         [Required]
-        public DateTime EmiDate { get; set; }
+        public string EmiDate { get; set; }
         [Required]
         public double EmiAmount { get; set; }
         public double? LateFineCharge { get; set; }
