@@ -55,6 +55,7 @@ namespace CustomerApi.Services
             {
                 user.Password = Customer.Password;
                 this.context.Customers.Update(user);
+                this.context.SaveChanges();
             }
         }
     }

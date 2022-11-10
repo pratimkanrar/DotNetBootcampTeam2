@@ -57,6 +57,7 @@ namespace AdminApi.Services
             {
                 user.Password = admin.Password;
                 this.context.Admin.Update(user);
+                this.context.SaveChanges();
             }
         }
     }
